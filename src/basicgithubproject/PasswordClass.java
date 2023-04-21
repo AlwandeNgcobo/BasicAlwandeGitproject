@@ -11,12 +11,12 @@ package basicgithubproject;
 public class PasswordClass {
     private String password = "Hello";
     
-    public boolean checkPassword(){
+    public boolean checkPassword(String password){
         if (password.contains("s")) {
-            return true;
+            return false;
         }
         else{
-            return false;
+            return true;
         }
     }
 }

@@ -45,8 +45,8 @@ jobs:
         
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
-        working-directory: ./src/basicgithubproject
-        run: cp -t "../../test/basicgithub/"
+        working-directory: ./test/basicgithub
+        run: cp -t "../../test/basicgithub/" PasswordClassTest.class
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 

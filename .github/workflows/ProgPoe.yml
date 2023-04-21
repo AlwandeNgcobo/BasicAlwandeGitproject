@@ -35,23 +35,23 @@ jobs:
 
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
-        working-directory: ./src/st2123456
+        working-directory: ./src/basicgithubproject
         run: ls
         
         
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
-        working-directory: ./src/st2123456
-        run: cp -t  "../../test/st2123456" Message.class St2123456.class
+        working-directory: ./src/basicgithubproject
+        run: cp -t  "../../test/basicgithubproject" PasswordClassTest.java
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
-        working-directory: ./test/st2123456
+        working-directory: ./test/basicgithubproject
         run: cp -t  "../../testresources/" Message.class St2123456.class 
         
         # list contents or directory
       - name: List contents test package
-        working-directory: ./test/st2123456
+        working-directory: ./test/basicgithubproject
         run: ls
         
         #run Message Class tests and output report 
@@ -59,6 +59,6 @@ jobs:
         working-directory: ./test
         run: |
          ls
-         java -jar  "../testresources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class  st2123456.MessageTest  
+         java -jar  "../testresources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class  PasswordClassTest.MessageTest  
          
          

@@ -45,13 +45,13 @@ jobs:
         
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
-        working-directory: ./test/basicgithub
-        run: cp -t "../../test/basicgithub/" PasswordClassTest.class
+        working-directory: ./src/basicgithubproject
+        run: cp -t "../../test/basicgithub/" BasicGithubProject.class PasswordClass.class
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
         working-directory: ./test/basicgithub
-        run: cp -t  "../../testresources/" 
+        run: cp -t  "../../testresources/" PassWordClass.class
         
         # list contents or directory
       - name: List contents test package

@@ -38,11 +38,15 @@ jobs:
         working-directory: ./src/basicgithubproject
         run: ls
         
+        # list contents of src to verify that classess compiled 
+      - name: List contents of test directory after compile
+        working-directory: ./test/basicgithub
+        run: ls
         
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
         working-directory: ./src/basicgithubproject
-        run: "./test/basicgithub"
+        run: "../../test/basicgithub/"
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 

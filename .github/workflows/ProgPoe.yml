@@ -51,7 +51,7 @@ jobs:
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
         working-directory: ./test/basicgithub
-        run: cp -t  "../../testresources/" PassWordClass.class
+        run: cp -t  "../../testresources/" PasswordClassTest.class
         
         # list contents or directory
       - name: List contents test package

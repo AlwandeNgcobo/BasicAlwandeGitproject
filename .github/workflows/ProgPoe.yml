@@ -60,9 +60,9 @@ jobs:
         
         #run Message Class tests and output report 
       - name: run Messages Class tests and create report 
-        working-directory: ./test
+        working-directory: ./test/basicgithub
         run: |
          ls
-         java -jar  "../TestResources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class  PasswordClassTest.class
+         java -jar  "../TestResources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class  PasswordClassTest.java
          
          

@@ -63,6 +63,6 @@ jobs:
         working-directory: ./test
         run: |
          ls
-         java -jar  "../TestResources/junit-platform-console-standalone-1.6.0.jar" -cp "../../TestResources/" --select-class  PasswordClassTest.class
+         java -jar  "../TestResources/junit-platform-console-standalone-1.6.0.jar" -cp "./basicgithubproject" --select-class  PasswordClassTest.class
          
          

@@ -31,27 +31,31 @@ jobs:
      # Compiles classes to test 
       - name: compile classes
         working-directory: ./src
-        run: javac -cp "../TestResources/junit-platform-console-standalone-1.6.0.jar" ./basicgithubproject/BasicGithubProject.java ./basicgithubproject/PasswordClass.java  "../test/basicgithubproject/PasswordClassTest.java"    
+        run: javac -cp "../TestResources/junit-platform-console-standalone-1.6.0.jar" ./basicgithubproject/BasicGithubProject.java ./basicgithubproject/PasswordClass.java  "../test/basicgithub/PasswordClassTest.java"    
 
     # list contents of src to verify that classess compiled 
       - name: List contents of src directory after compile
         working-directory: ./src/basicgithubproject
         run: ls
         
+        # list contents of test to verify that classess compiled 
+      - name: List contents of test directory after compile
+        working-directory: ./test/basicgithub
+        run: ls
         
        # copy compiled classes to test directory 
       - name : copy compiled classes to testresources directory 
         working-directory: ./src/basicgithubproject
-        run: cp -t  "../../test/basicgithubproject" PasswordClassTest.class
+        run: cp -t "../../test/basicgithub/" BasicGithubProject.class PasswordClass.class
         
         #copy compiled tests 
       - name : copy compiled Test classes to testresources directory 
-        working-directory: ./test/basicgithubproject
-        run: cp -t  "../../testresources/" 
+        working-directory: ./test/basicgithub
+        run: cp -t  "../../TestResources/" PasswordClassTest.class
         
         # list contents or directory
       - name: List contents test package
-        working-directory: ./test/basicgithubproject
+        working-directory: ./test/basicgithub
         run: ls
         
         #run Message Class tests and output report 
@@ -59,6 +63,6 @@ jobs:
         working-directory: ./test
         run: |
          ls
-         java -jar  "../TestResources/junit-platform-console-standalone-1.6.0.jar" -cp "." --select-class  PasswordClassTest.MessageTest  
+         java -jar  "../TestResources/junit-platform-console-standalone-1.6.0.jar" -cp "./basicgithub" --select-class  PasswordClassTest.class
          
          

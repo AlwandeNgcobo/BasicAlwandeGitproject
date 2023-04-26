@@ -58,8 +58,8 @@ jobs:
         working-directory: ./test/basicgithubproject
         run: ls
         
-        #run Message Class tests and output report 
-      - name: run Messages Class tests and create report 
+        #run Password Class tests and output report 
+      - name: run Pasword Class tests and create report 
         working-directory: ./test
         run: |
          ls
